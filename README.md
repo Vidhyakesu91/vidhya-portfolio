@@ -2,8 +2,6 @@
 
 ## 🔗 Live Portfolio
 
-👉 https://your-portfolio-link.com
-
 ---
 
 ## 👩‍💻 About Me
