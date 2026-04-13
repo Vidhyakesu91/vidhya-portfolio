@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidhya | Digital Marketing Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#020617,#0f172a);
+    color:#e2e8f0;
+    overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h1{
+    color:#38bdf8;
+}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 50px;
+    min-height:100vh;
+}
+
+.hero-text{
+    max-width:600px;
+    animation:fadeUp 1s ease;
+}
+
+.hero-text h2{
+    font-size:42px;
+    color:#38bdf8;
+}
+
+.hero-text p{
+    margin-top:20px;
+    line-height:1.7;
+}
+
+.hero-img img{
+    width:300px;
+    border-radius:50%;
+    border:4px solid #38bdf8;
+    box-shadow:0 0 40px rgba(56,189,248,0.4);
+    animation:float 4s ease-in-out infinite;
+}
+
+/* SECTION */
+section{
+    padding:80px 50px;
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h3{
+    font-size:30px;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+/* CARDS */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:#38bdf8;
+    color:black;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+/* IMAGE DISPLAY */
+.preview{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:300px; /* prevents jump effect */
+}
+
+.preview img{
+    width:100%;
+    max-width:600px;
+    border-radius:15px;
+    display:none;
+    animation:fade 0.5s ease;
+    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* ACTIVE IMAGE */
+.preview img.active{
+    display:block;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-img img{
+        margin-top:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1><a href="#home">Vidhya</a></h1>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <div class="hero-text">
+        <h2>Digital Marketing Fresher<br>SEO & Analytics Focused</h2>
+        <p>
+            I help businesses improve visibility, traffic, and engagement using SEO strategies,
+            data-driven insights, and content optimization.
+            
+        </p>
+    </div>
+
+    <div class="hero-img">
+        <img src="vidhya.jpeg" alt="Vidhya">
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h3>About Me</h3>
+    <p>
+        I specialize in SEO, analytics, and digital growth strategies. I focus on improving
+        search visibility, optimizing content, and analyzing performance data to drive results.
+        I am a computer science student with Non IT work experience then turned as aspirant fresher on
+        Digital Marketing role to increase my focus & Skills on SEO, Analytics, and Content Strategy. 
+        I am passionate about helping businesses grow online through data-driven strategies and creative solutions.
+    </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h3>Projects</h3>
+
+    <div class="card" onclick="showImage('seo')">
+        <h4>SEO Audit Project</h4>
+        <p>Analyzed website structure, improved on-page SEO, and optimized performance.</p>
+    </div>
+
+    <div class="card" onclick="showImage('social')">
+        <h4>Social Media Strategy</h4>
+        <p>Created content plan and engagement strategy to improve reach.</p>
+    </div>
+
+    <div class="card" onclick="showImage('ux')">
+        <h4>Website Analysis</h4>
+        <p>website design of kimplas piping systems pvt ltd</p>
+    </div>
+
+    <!-- IMAGE PREVIEW -->
+    <div class="preview">
+        <img id="seo" src="SEO Audit Project.jpg">
+        <img id="social" src="Social Media Strategy.jpg">
+        <img id="ux" src="kimplas piping systems pvt ltd.jpg">
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h3>Skills</h3>
+
+    <div class="grid">
+        <div class="card">SEO</div>
+        <div class="card">Google Analytics</div>
+        <div class="card">Keyword Research</div>
+        <div class="card">Content Strategy</div>
+        <div class="card">Excel</div>
+        <div class="card">Social Media Marketing</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h3>Contact</h3>
+    <p>Email: vidhyakesu91@gmail.com</p>
+    <p>Phone: +91-8072411489</p>
+    <br>
+    <button><a href="https://www.linkedin.com/in/vidhya-r-021003386/" target="_blank">LinkedIn Profile</a></button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Vidhya Portfolio</p>
+</footer>
+
+<!-- JS ANIMATION -->
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 300;
+
+        if(top > offset){
+            sec.classList.add("show");
+        }
+    });
+});
+
+function showImage(id, element){
+    const images = document.querySelectorAll(".preview img");
+    const cards = document.querySelectorAll(".card");
+
+    images.forEach(img => img.classList.remove("active"));
+    cards.forEach(card => card.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+    element.classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
